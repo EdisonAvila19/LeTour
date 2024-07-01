@@ -1,5 +1,5 @@
 import express from 'express'
-import { getJSON } from '../testNode/consulta.js'
+import { getJSON } from './consulta.js'
 
 const app = express();
 const port = process.env.Port || 3000;
