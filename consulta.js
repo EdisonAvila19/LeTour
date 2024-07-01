@@ -16,8 +16,6 @@ async function getJSON () {
     Etapas[link] = await fetchLink(link)
   }))
 
-  return Etapas
-
   // const jsonData = JSON.stringify(Etapas, null, 2)
   // fs.writeFile('data.json', jsonData, (err) => {
   //   if (err) {
@@ -26,6 +24,8 @@ async function getJSON () {
   //     console.log('Archivo JSON creado exitosamente.');
   //   }
   // });
+
+  return Etapas
 }
 
 //SECTION - Functions 
@@ -54,7 +54,7 @@ function getTable (htmlCode) {
       Equipo: capitalize(regex.exec(Equipo)[1]),
       Tiempos: Times[0].innerHTML,
       Diferencia: Times[1].innerHTML.replace('\n','').trim(),
-      B: Times[2].innerHTML,
+      B: Times[2].innerHTML.replace('B : ',''),
       P: Times[3].innerHTML
     }
   })
