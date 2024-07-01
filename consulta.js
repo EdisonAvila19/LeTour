@@ -10,11 +10,11 @@ async function getJSON () {
   Etapas['etapa-1'] = getTable(html)
 
   //Solo para tener el JSON ordenado
-  // await Promise.all(allLinks.map(link => Etapas[link] = {}))
+  await Promise.all(allLinks.map(link => Etapas[link] = {}))
 
-  // await Promise.all(allLinks.map(async (link) => {
-  //   Etapas[link] = await fetchLink(link)
-  // }))
+  await Promise.all(allLinks.map(async (link) => {
+    Etapas[link] = await fetchLink(link)
+  }))
 
   return Etapas
 
