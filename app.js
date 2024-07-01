@@ -1,5 +1,5 @@
 import express from 'express'
-// import { getJSON } from './consulta.js'
+import { getJSON } from './consulta.js'
 import bodyParser from "body-parser";
 
 const app = express();
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.get('/datos', async (req, res) => {
     try {
         const data = {
-            data: "await getJSON()",
+            data: await getJSON(),
             fecha: new Date()
         };
         res.json(data);
