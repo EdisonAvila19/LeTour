@@ -1,11 +1,16 @@
 import express from 'express'
 import { getJSON } from './consulta.js'
+import bodyParser from "body-parser";
 
 const app = express();
+app.use(bodyParser.json())
 const port = process.env.Port || 3000;
 
 // Ruta para obtener datos
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
+    res.send("Welcome")
+})
+app.get('/datos', async (req, res) => {
     try {
         const data = {
             data: await getJSON(),
